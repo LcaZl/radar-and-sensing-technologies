@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=65.5"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">= 3.10.12"
+name = "arss-cci-hrlc"
+version = "1.0.1"
+readme = "README.md"
+license = { text = "pyproject-template © 2024 by RSLab@DISI, UniTrento (Italy) is licensed under CC BY 4.0 " }
+description = "SRT project Climate Change"
+authors = [{ name = "Luca Zanolo", email = "luca.zanolo@studenti.unitn.it" }]
+maintainers = [{ name = "Luca Zanolo", email = "luca.zanolo@studenti.unitn.it" }]
+dependencies = [
+    "matplotlib",
+    "openpyxl",
+    "pandas",
+    "PyYAML",
+    "rasterio",
+    "scikit-image",
+    "scikit-learn",
+    "scipy",
+    "tqdm",
+    "tabulate",
+    "notebook",
+    "numpy",
+    "rioxarray",
+    "xarray[complete]",
+    "graphviz",
+    "geopandas",
+    "folium",
+    "dask == 2025.3.0",
+    "distributed == 2025.3.0",
+    "plotly",
+    "kneed"]
+
+[project.scripts]
+masks-refinement = "process_masks._masks_refinement_scripts:masks_refinement_script"
+cloud-restoration = "process_composites._cloud_restoration_scripts:cloud_restoration_script"
+generate-features = "generate_features._generate_features_scripts:generate_features_script"
+generate-dataset = "generate_dataset._generate_dataset_scripts:generate_dataset_script"
+svm-pipeline = "svm_pipeline._pipeline_scripts:pipeline_script"
+generate-lc-map = "generate_lc_map._generate_lc_map_scripts:generate_lc_map_script"

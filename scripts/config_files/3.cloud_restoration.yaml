@@ -1,0 +1,17 @@
+# Composites filter parameters
+composites_year : 2019
+dems_year : 2022
+tile_id : 21KUQ
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/S2_processed_composites/logs
+log_level: info
+
+# Input
+#/home/hrlcuser/media/samba_share_folder/monthly_median_composites_21KUQ_L2A/*
+composites_path : /home/hrlcuser/media/data/composites/median_composites/* 
+dems_path : /home/hrlcuser/media/data/DEMs/*
+
+# Output
+output_path : /home/hrlcuser/media/S2_processed_composites # Set to Null to avoid saving restored composites

@@ -1,0 +1,40 @@
+max_quantile_val : 0.999
+min_quantile_val : 0.001
+no_data_value : 0
+sensor : L7
+tile : 42WXS
+cloud_mask_path : Null
+shadow_mask_path : Null
+verbose : True
+file_name : LE07_L2SP_166052_20060327_20200914_02_T1_orig
+zip_path : media/2.opt-spectral-filtering-test-data # + /file_name.zip
+output_folder_path : media/2.opt-spectral-filtering-test-data # + /file_name 
+tif_output_path : media/2.opt-spectral-filtering-test-data # + /file_name.tif
+
+
+# PATHS:
+# [ON WORKSTATION] media/2.opt-spectral-filtering-test-data/
+# data/2.opt-spectral-filtering-test-data/
+
+# FILE_NAMES
+# 1 LE07_L2SP_166052_20060327_20200914_02_T1_orig
+# 2 S2A_MSIL2A_20190719T070631_N0213_R106_T42WXS_20190719T102226
+# 3 S2B_MSIL2A_20190704T070629_N0212_R106_T42WXS_20190704T104800
+# 4 S2B_MSIL2A_20190721T065629_N0213_R063_T42WXS_20190721T095436
+# 5 S2B_MSIL2A_20190721T065629_N0213_R063_T42WXS_20190721T104109
+# 6 S2B_MSIL2A_20190731T065629_N0213_R063_T42WXS_20190731T120318
+
+
+
+# SCRIPT 2 - Output Generated
+# Mainly generates the `.TIF` file for the input data. 
+# (What data is necessary to keep during processing, except this `.TIF` file ?)
+#  (1) The `.TIF` file is saved at `data/2.opt-spectral-filtering_test-data`, on the same level as the original `.zip` input archive.
+#  (2) All the other `.jp2` and `.xml` files are saved in a folder with the same filename as the `.zip` file.
+#  (3) This folder contains (actually only for Landsat data) some subfolders according to the selected tile and sensor.
+#  Example:
+#  - Input zip path: `data/2.opt-spectral-filtering_test-data/LE07_L2SP_166052_20060327_20200914_02_T1_orig.zip`
+#  - (1) .TIF file path: `data/2.opt-spectral-filtering_test-data/LE07_L2SP_166052_20060327_20200914_02_T1_orig.tif`
+#  - (2) Other files folder path: `data/2.opt-spectral-filtering_test-data/LE07_L2SP_166052_20060327_20200914_02_T1_orig/`
+#  - (3) Internal example folder path: `data/2.opt-spectral-filtering_test-data/LE07_L2SP_166052_20060327_20200914_02_T1_orig/L5_42WXS`  
+#    ("L5_42WSX" is a combination of the chosen sensor and tile, in this case for Landsat)

@@ -1,0 +1,29 @@
+# Filter for composites and dems
+composites_year : 2019
+dems_year : 2022
+tile_id : 21KUQ
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/SVM/lc_maps/logs
+log_level: info
+
+# Input
+composites_path : /home/hrlcuser/media/S2_processed_composites/median_composites_restored_adj/*.tif
+dems_path : /home/hrlcuser/media/data/DEMs/*
+features_path : /home/hrlcuser/media/S2_features/2019-01/*.tif
+labels_path :  /home/hrlcuser/media/data/training_points/CCI_HRLC_legend_internal.csv
+#model_path : /home/hrlcuser/media/SVM/lc_maps/best_svm/svm.pkl
+model_path : /home/hrlcuser/media/SVM/lc_maps/best_svms/svm.pkl
+
+baseline_lc_map_path : "/home/hrlcuser/media/data/training_points/ESACCI-HRLC-L4-MAP-CL01-A02T21KUQ-10m-P1Y-2019-fv01.1.tif"
+
+# Dataset parameters
+chunk_size : 1098 # Squares X x X
+chunks_limit : Null # For debugging
+
+# Models to use
+svms_to_use : [svmMc, svmMcCal, svmsBin, svmsBinSoftmax]
+# Output
+#output_path : /home/hrlcuser/media/SVM/lc_maps/best_svm/lc_maps
+output_path : /home/hrlcuser/media/SVM/lc_maps/best_svms/lc_maps

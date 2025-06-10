@@ -1,0 +1,28 @@
+cloud_threshold : 40.0
+images_per_group_threshold : 8
+csv_data_path : media/1.select-images-test-data/20MRA.csv
+
+
+# Define date ranges for each month
+monthly_ranges : [
+    ['0101', '0131'], ['0201', '0228'], ['0301', '0331'], ['0401', '0430'],
+    ['0501', '0531'], ['0601', '0630'], ['0701', '0731'], ['0801', '0831'],
+    ['0901', '0930'], ['1001', '1031'], ['1101', '1130'], ['1201', '1231']
+]
+
+# Define overlapping bi-monthly ranges
+bi_monthly_ranges : [
+    ['0101', '0215'], ['0115', '0315'], ['0215', '0415'], ['0315', '0515'],
+    ['0415', '0615'], ['0515', '0715'], ['0615', '0815'], ['0715', '0915'],
+    ['0815', '1015'], ['0915', '1115'], ['1015', '1215'], ['1115', '1231']
+]
+
+
+# PATHs
+# [ON WORKSTATION] media/1.select-images-test-data/
+# data/1.select-images-test-data/
+
+# FILENAMES
+# 20MRA.csv
+# 20MRE.csv
+# 37PES.csv

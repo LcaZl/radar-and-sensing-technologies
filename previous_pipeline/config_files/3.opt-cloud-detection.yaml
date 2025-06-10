@@ -1,0 +1,14 @@
+verbose : True
+# Input
+# /home/hrlcuser/media/hrlc_cci_download/18NWL_L2
+# /home/hrlcuser/media/hrlc_cci_download/10UED_L2
+input_images_folder : /home/hrlcuser/media/hrlc_cci_download/18NWL_L2
+output_folder_path : /home/hrlcuser/media/S2_processed_masks_old
+sensor : "S2"
+area : Amazzonia
+year : 2019
+use_stage : False
+stage : 1
+tile : 18NWL
+cloud_coverage_threshold : 0.0008
+image_brightness_threshold : 1400

@@ -1,0 +1,27 @@
+
+
+shape_files :
+- /home/hrlcuser/media/data/training_points/amazonia_static_area_2019_photointerpreted_UniTN.shp
+- /home/hrlcuser/media/data/training_points/amazonia_static_ER10400-10439_2019_merged_UniTN-PoliMi.shp
+compute_GLCM : True
+GLCM_path : /home/hrlcuser/media/SVM_old/glcm_features
+compute_texture : False
+compute_dataset : True
+validate_name : ''
+composites_path:
+- /home/hrlcuser/media/S2_processed_composites/median_composites_restored_adj/
+output_folder_path : /home/hrlcuser/media/SVM_old/
+output_names :
+- /home/hrlcuser/media/SVM_old/trained_SVM_21KUQ.sav
+- /home/hrlcuser/media/SVM_old/trained_SVM_21KUQ_round.sav
+roundings : 
+- Null
+- Null
+
+standardization :
+- False
+- True
+
+tile_specific :
+- False
+- True

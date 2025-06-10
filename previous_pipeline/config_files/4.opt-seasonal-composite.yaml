@@ -1,0 +1,11 @@
+tif_images_path : "media/2.opt-spectral-filtering-test-data"
+seasonal_composite_output_path : "media/4.seasonal-composite"
+ndvi_output_path : "media/4.seasonal-composite/"
+masks_path : "media/3.opt-cloud-detection-test-data"
+year : 2020
+tile : 42WXS
+area : Siberia
+sensor : L5
+verbose : True
+computeOnlyNDVI : True # Normalized Difference Vegetation Index
+multiprocessing_precessors : 4

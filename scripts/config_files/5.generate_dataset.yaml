@@ -1,0 +1,49 @@
+# Composites, dems and other features filters
+composites_year : 2019
+dems_year : 2022
+features_date : "2019-01" # Data in format 'YYYY-mm'
+tile_id : 21KUQ
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/SVM/datasets/logs
+log_level: info
+
+# Input data
+
+convert_sav_dataset : False # If true no dataset will be generated
+sav_dataset_path : /home/hrlcuser/media/SVM/datasets/dataset.sav
+
+composites_path : /home/hrlcuser/media/S2_processed_composites/median_composites_restored_adj/*.tif
+
+dems_path : /home/hrlcuser/media/data/DEMs/*
+features_path : /home/hrlcuser/media/S2_features/
+
+# Sentinel-2 Tiles coordinates 
+kml_path : /home/hrlcuser/media/data/S2A_OPER_GIP_TILPAR_MPC__20151209T095117_V20150622T000000_21000101T000000_B00.kml
+
+# Classes Labels
+labels_path : /home/hrlcuser/media/data/training_points/CCI_HRLC_legend_internal.csv
+
+points_dataset_path : /home/hrlcuser/media/data/training_points/amazonia_static_ER10400-10439_2019_merged_UniTN-PoliMi.zip
+# amazonia_static_area_2019_photointerpreted_UniTN.zip / amazonia_static_ER10400-10439_2019_merged_UniTN-PoliMi.zip
+
+# Used for some kind of datasets to extrapolate extra samples
+lc_map_path : /home/hrlcuser/media/data/training_points/ESACCI-HRLC-L4-MAP-CL01-A02T21KUQ-10m-P1Y-2019-fv01.1.tif
+
+# INFO
+# dataset_type = enhanced: Add and amout of points to each class of the dataset ('points_dataset_path') from a LC map to meet the:
+#  - average number of samples per class -> enhanced_type = avg
+#  - number of samples of the largest class -> enhanced_type = maxù
+# dataset_type = fullLC:
+#  - Create a train dataset entirely from LC ('lc_map_path'), with 'samples_per_class' samples for each class.
+#  - Create a test dataset made only of points at 'points_dataset_path'.
+
+dataset_type : std # or fullLC or std or enhanced
+samples_per_class : 400
+apply_erosion : False
+enhanced_type : max # max, avg
+
+# Output
+output_path : /home/hrlcuser/media/SVM/datasets
+report_path : /home/hrlcuser/media/SVM/datasets/reports

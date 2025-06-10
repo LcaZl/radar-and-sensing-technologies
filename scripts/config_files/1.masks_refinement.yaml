@@ -1,0 +1,36 @@
+# S2 L2A products filter parameters
+sensor : S2
+year : 2019
+tile_id : 18NWL
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/S2_processed_masks/logs
+log_level: info
+
+# Input
+# /home/hrlcuser/media/hrlc_cci_download/18NWL_L2/*.zip
+# /home/hrlcuser/media/hrlc_cci_download/10UED_L2/*.zip
+input_path : /home/hrlcuser/media/hrlc_cci_download/18NWL_L2/*.zip
+
+# Output
+output_path : /home/hrlcuser/media/S2_processed_masks
+
+# Masks processing parameters
+resolutions: [10m, 20m, 60m]
+mask_definitions : {
+    cloud: [8, 9, 10],  # Cloud-related classes
+    shadow: [3]  # Cloud shadows
+#    snow: [11],  # Snow/ice
+#    nodata: [0],  # No data
+}
+
+cloud_coverage_threshold : 0.0008 
+image_brightness_threshold : 1400
+# CLOUD COVERAGE THRESHOLD
+# If the cloud coverage of an image is higher that this threshold, apply KMeans clustering for refinment.
+# Otherwise keep the mask as it is. It is used in refineCloudMask and refineShadowdMask
+
+# IMAGE BRIGHTNESS THRESHOLD
+# Quality control threshold about the brightness of the clouds. If the mean reflectance of cloud pixels is above a certain threshold
+# it suggests that the clouds are bright and well-defined, making it more likely that their shadows can be detected accurately.

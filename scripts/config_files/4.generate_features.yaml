@@ -1,0 +1,24 @@
+# Products filters
+features_date : 2019-01 # Data in format 'YYYY-mm'
+dems_year : 2022
+tile_id : 21KUQ
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/S2_features/logs
+log_level: info
+
+# Input
+composites_path : /home/hrlcuser/media/S2_processed_composites/median_composites_restored_adj/*
+dems_path : /home/hrlcuser/media/data/DEMs/*
+
+# Output
+output_path : /home/hrlcuser/media/S2_features
+
+# GLCM computation parameters
+compute_GLCM : True
+band_to_use : 1 # 4
+window_size : 7
+batch_size : 100 # Max memory: ~17 GiB
+glcm_distance : 1
+glcm_angle : 0

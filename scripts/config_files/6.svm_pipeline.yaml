@@ -1,0 +1,71 @@
+# Input
+dataset_path : /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_std.csv # or 
+# T21KUQ_f2019-01_UniTN_avg_enhanced.csv
+# T21KUQ_f2019-01_UniTN-PoliMi_max_enhanced.csv
+# T21KUQ_f2019-01_UniTN_std.csv
+labels_path :  /home/hrlcuser/media/data/training_points/CCI_HRLC_legend_internal.csv
+
+# Logging & debug parameters
+verbose : True
+log_dir : /home/hrlcuser/media/SVM/evaluation/logs
+log_level : info
+
+# Features Preprocessing (standard, minmax or minmax_q)
+band_features_preprocessing : standard
+other_features_preprocessing : standard
+exluded_from_preprocessing : []
+
+# Features Selection
+
+non_features_columns : [x, y, ground_truth_index, ground_truth_label, split]
+use_band_features : True
+use_glcm_features : True
+use_other_features : False
+fixed_features :  []
+drop_constant_features : True
+
+# Selection strategy - multicollinearity_analysis or rfecv
+features_selection_strategy : multicollinearity_analysis
+fss_use_bands : False # If false bands will be kept and not considered in the selection
+
+# Multicollinearity analysis parameters
+ma_correlation_threshold: 0.8
+
+# Features reduction
+apply_pca : True
+pca_variance_threshold : 0.99 # Amount of variance that must be retained in the generated components
+pca_use_bands : False
+pca_components_selection_strategy : average # average, cev or ec
+# cev: Cumulative explained variance 
+# ec: Elbow Curve
+# average: average between cev and ec identified number of components
+
+# Output
+output_path : /home/hrlcuser/media/SVM/evaluation/experiments
+
+# Grid Search parameters
+perform_grid_search : True
+
+gs_dataset_path : 
+#- /media/datapart/lucazanolo/SVM/datasets/T21KUQ_f2019-01_UniTN-PoliMi_std.csv
+#- /media/datapart/lucazanolo/SVM/datasets/T21KUQ_f2019-01_UniTN-PoliMi_max_enhanced.csv
+#- /media/datapart/lucazanolo/SVM/datasets/T21KUQ_f2019-01_UniTN-PoliMi_max_enhanced_eroded.csv
+#- /media/datapart/lucazanolo/SVM/datasets/T21KUQ_f2019-01_UniTN-PoliMi_1000_fullLC.csv
+- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_std.csv
+- /home/hrlcuser/media/SVM/datasets/dataset.csv
+- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN-PoliMi_std.csv
+- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_max_enhanced.csv
+- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_max_enhanced_eroded.csv
+#- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_400_fullLC_eroded.csv
+- /home/hrlcuser/media/SVM/datasets/T21KUQ_f2019-01_UniTN_400_fullLC.csv
+
+gs_band_features_preprocessing : [minmax, standard, minmax_q]
+gs_other_features_preprocessing : [minmax, standard, minmax_q]
+gs_use_band_features : [True]
+gs_use_glcm_features : [True, False]
+gs_use_other_features : [True, False]
+gs_pca_components_selection_strategy : [average]
+gs_features_selection_strategy : [Null, rfecv, multicollinearity_analysis]
+gs_fss_use_bands : [True, False]
+gs_apply_pca : [True, False]
+gs_pca_use_bands : [True, False]
